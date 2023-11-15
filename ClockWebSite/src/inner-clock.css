@@ -1,110 +1,81 @@
-:root{
-    --clock-colors: white;
-    --blatt-color: #343a40;
-    
-}
-#current {
-    overflow: hidden;
-    padding: 50px;
-}
-.clock{
+.clock-in{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.circle {
+.circle-in {
     border-radius: 50%;
-    width: 60vh;
-    height: 60vh;
+    width: 40vh;
+    height: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--clock-colors);
     transition: all 1s;
 }
-.cifferblatt {
+.cifferblatt-in {
     border-radius: 50%;
-    width: 55vh;
-    height: 55vh;
+    width: 35vh;
+    height: 35vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--blatt-color);
     transition: all 1s;
 }
-.s-arm {
+.s-arm-in {
     width: 70%;
     height: 0.5vh;
     margin: auto;
     margin: -35%;
 }
-.m-arm {
+.m-arm-in {
     width: 60%;
     height: 0.75vh;
     margin: auto;
     margin: -30%;
 }
-.h-arm {
+.h-arm-in {
     width: 40%;
     height: 1vh;
     margin: auto;
     margin: -20%;
 }
-.secarm-real-s{
+.secarm-real-s-in{
     width: 50%;
     height: 0.5vh;
     background-color: var(--clock-colors);
 }
-.secarm-real-m{
+.secarm-real-m-in{
     width: 50%;
     height: 0.75vh;
     background-color: var(--clock-colors);
 }
-.secarm-real-h{
+.secarm-real-h-in{
     width: 50%;
     height: 1vh;
     background-color: var(--clock-colors);
 }
-.central-point{
+.central-point-in{
     width: 1vh;
     height: 1vh;
     border-radius: 50%;
     margin: -0.5vh;
     background-color: var(--clock-colors);
 }
-.h2h{
-    transform: rotate(30deg);
-    left: 81%;
-    top: 10%;
+.clock-wrapper {
+    background-color: rgba(100, 100, 100, 0.5);
+    width: 30%;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-.h3h{
-    transform: rotate(60deg);
-    left: 90%;
-    top: 10%;
-}
-.h4h{
-    transform: rotate(90deg);
-    left: 95%;
-    top: 20%;
-}
-.h5h{
-    transform: rotate(120deg);
-    left: 80%;
-
-}
-.h2h{
-    transform: rotate(30deg);
-    left: 70%;
-}
-.text-center{
-    margin-bottom: 70px;
-}
-#country{
-    display: inline;
-}
-@font-face {
-    font-family: "Digital";
-    src: url(../fonts/digital_7/digital-7.ttf);
+#test{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #hours {
     font-family: "Digital";
@@ -112,9 +83,4 @@
     margin-top: 30px;
     display: inline;
     margin-right: 30px;
-}
-.subtexts{
-    text-align: center;
-    margin:30px auto;
-    width: auto;
 }

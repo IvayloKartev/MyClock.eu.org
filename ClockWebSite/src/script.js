@@ -32,17 +32,20 @@ document.addEventListener("DOMContentLoaded", function() {
                 Authorization: `Bearer ${ipinfoToken}`
             }
           })
-          .then(response => response.json())
+          .then(response => {
+            console.log('HTTP Response:', response);
+            return response.json();
+          })
           .then(data => {
             const country = data.country;
             const city = data.city;
-            document.getElementById('country').textContent = `Your location: ${city}, ${country}`;
+            document.getElementById('country').textContent = `In ${city}, ${country}`;
           })
           .catch(error => {
             console.error('Error fetching IP information:', error);
           });
       }
-    //getCountry();
+    getCountry();
     function changeSec(){
         let trStrs = "rotate("+secDeg+"deg)";
         secArm.style.transform = trStrs;
@@ -54,6 +57,19 @@ document.addEventListener("DOMContentLoaded", function() {
         minDeg += 0.1;
         hDeg += 0.001666;
     }
+    function refreshHour(){
+        let h = new Date();
+        let sec = h.getSeconds();
+        let min = h.getMinutes();
+        let hour = h.getHours();
+        if(sec<10) sec = "0"+sec;
+        if(min<10) min="0"+min;
+        if(hour<10) hour="0"+hour;
+        let hStr = hour+":"+min+":"+sec;
+        const digHour = document.getElementById('hours');
+        digHour.innerHTML = hStr;
+    }
     setInterval(changeSec, 1000);
+    setInterval(refreshHour, 1000);
     darkToggle.addEventListener("change", themeSwitch);
 })
